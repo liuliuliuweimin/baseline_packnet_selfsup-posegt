@@ -19,7 +19,7 @@ cfg.arch.max_epochs = 100                # Maximum number of epochs
 ### CHECKPOINT
 ########################################################################################################################
 cfg.checkpoint = CN()
-cfg.checkpoint.filepath = '/home/thuar/Desktop/kitti_pose_gt/checkpoints'    # Checkpoint filepath to save data
+cfg.checkpoint.filepath = '/home/zhangty/baseline_packnet_selfsup_posegt/checkpoints'    # Checkpoint filepath to save data
 cfg.checkpoint.save_top_k = 100           # Number of best models to save
 cfg.checkpoint.monitor = 'abs_rel'         # Metric to monitor for logging
 cfg.checkpoint.monitor_index = 0        # Dataset index for the metric to monitor

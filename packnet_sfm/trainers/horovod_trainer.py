@@ -64,20 +64,20 @@ class HorovodTrainer(BaseTrainer):
             # Validation
             validation_output = self.validate(val_dataloaders, module)
 
-            # # Adding tensorboard monitor
-            # self.writer.add_scalar('Metrics/abs_rel_Depth'
-            #                        , validation_output['ddad-val-lidar-camera_01-abs_rel']
-            #                        , self.writer_idx_validate)
-            # self.writer.add_scalar('Metrics/abs_rel_Depth_pp'
-            #                        , validation_output['ddad-val-lidar-camera_01-abs_rel_pp']
-            #                        , self.writer_idx_validate)
-            # self.writer.add_scalar('Metrics/abs_rel_Depth_gt'
-            #                        , validation_output['ddad-val-lidar-camera_01-abs_rel_gt']
-            #                        , self.writer_idx_validate)
-            # self.writer.add_scalar('Metrics/abs_rel_Depth_pp_gt'
-            #                        , validation_output['ddad-val-lidar-camera_01-abs_rel_pp_gt']
-            #                        , self.writer_idx_validate)
-            # self.writer_idx_validate += 1
+            # Adding tensorboard monitor
+            self.writer.add_scalar('Metrics/abs_rel_Depth'
+                                   , validation_output['ddad-val-lidar-camera_01-abs_rel']
+                                   , self.writer_idx_validate)
+            self.writer.add_scalar('Metrics/abs_rel_Depth_pp'
+                                   , validation_output['ddad-val-lidar-camera_01-abs_rel_pp']
+                                   , self.writer_idx_validate)
+            self.writer.add_scalar('Metrics/abs_rel_Depth_gt'
+                                   , validation_output['ddad-val-lidar-camera_01-abs_rel_gt']
+                                   , self.writer_idx_validate)
+            self.writer.add_scalar('Metrics/abs_rel_Depth_pp_gt'
+                                   , validation_output['ddad-val-lidar-camera_01-abs_rel_pp_gt']
+                                   , self.writer_idx_validate)
+            self.writer_idx_validate += 1
 
             # Check and save model
             self.check_and_save(module, validation_output)
